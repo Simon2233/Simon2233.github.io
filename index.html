@@ -1,92 +1,23 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Simon's First Portfolio!</title>
-		<meta charset="UTF-8">
-		<meta name="description" content="Simon's Portfolio">
-		<meta name="keywords" content="Simon Fu First Portfolio">
-		<meta name="author" content="Simon Fu">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="icon" href="http://leagueoflegendseast.weebly.com/uploads/1/9/9/2/19925609/6155625.jpg">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	</head>
-	<script>
-		$(document).ready(function() {
-		    $("nav a").click(function(){
-		    	var hrefvalue = $(this).attr('href').substring(1);
-				$('html,body').animate({
-			        scrollTop: $("." + hrefvalue).offset().top},'slow');
-			});
-		});
-	</script>
-	<body>
-		<header>
-			<div class="logo"></div>
-			<nav>
-				<a href="#AboutMe">About Me</a>
-				<a href="#Projects">Projects</a>
-				<a href="#Contact">Contact</a>
-			</nav>
-			<h1>Simon Fu</h1>
-			<p class="headsub">Student / Jr. Front-End Developer / Software Engineer</p>
-		</header>
-		<section class="AboutMe">
-			<h2>About Me</h2>
-			<div class="row">
-			<div class="leftabout"><div class="face"></div></div>
-			<div class="midabout">
-			<p class="description">I have always been an achiever; be it academics or professional life or sports or any other field in my life. I believe in success through hard work and dedication. My motto in life is to ‘If you want something, work hard and you will achieve it; there are no shot cuts’.</p>
-			</div>
-			<div class="rightabout">
-			<ul class="links">
-				<li><a href="http://google.ca">Github</a></li>
-				<li><a href="http://google.ca">Twitter</a></li>
-				<li><a href="http://google.ca">Instagram</a></li>
-				<li><a href="http://google.ca">Linkedin</a></li>
-			</ul>
-			</div>
-		</div>
-		</section>
+---
+layout: default
+---
 
-		<section class="Projects">
-			<h2 id="Projects">Projects</h2>
-		</section>
+<div class="home">
 
-		<section class="Contact">
-			<h4>Contact Me!</h4>
-			<form action="https://formspree.io/simon.fu.1997@gmail.com" method="POST">
-				<div class="namemail">
-					<label>
-						<strong>Your Name</strong>
-				    	<input type="text" name="name">
-				    </label>
-				    <label>
-				    	<strong>Your Email</strong>
-				    	<input type="email" name="_replyto">
-				    </label>
-				</div>
-			    <label>
-			    	<strong>Message</strong>
-			    	<textarea name="message"></textarea>
-			    </label>
-			    <div class="moveright">
-			    	<input type="submit" value="Send" id="sendbutton">
-			    </div>
-			</form>
-		</section>
-		
-		<footer>
-			<div class="groupie">
-				<div class="logo"></div>
-				<div class="wrapit">
-					<nav class="fnav">
-						<a href="#About Me">About Me</a>
-						<a href="#Skills">Skills</a>
-						<a href="#Contact">Contact</a>
-					</nav>
-					<p class="copyright">Copyright © 2016 by Simon Fu</p>
-				</div>
-			</div>
-		</footer>
-	</body>
-</html>
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
