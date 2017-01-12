@@ -5,13 +5,13 @@ html, body {
 	font-family: 'Helvetica', sans-serif;
 }
 header {
-	background: url(https://unsplash.imgix.net/photo-1414490929659-9a12b7e31907) center center;
+	background: url(http://www.jeraldmason.net/Images/Website-Design-Background-1.jpg) center center;
 	background-size: cover;
 	height: 100%;
 }
 
 footer {
-	background: url(https://unsplash.imgix.net/photo-1414490929659-9a12b7e31907) center center;
+	background: url(http://www.jeraldmason.net/Images/Website-Design-Background-1.jpg) center center;
 	background-size: cover;
 	height: 155px;
 }
@@ -33,10 +33,11 @@ footer a {
 .copyright {
 	padding-left: 20px;
 	text-transform: uppercase;
+	font-family: 'Times New Roman', serif;
 }
 
 .logo {
-	background: url(http://leagueoflegendseast.weebly.com/uploads/1/9/9/2/19925609/6155625.jpg);
+	background: url(https://thebenclark.files.wordpress.com/2014/03/facebook-default-no-profile-pic.jpg);
 	background-size: cover;
 	height: 50px;
 	width: 50px;
@@ -106,28 +107,6 @@ h1 {
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
-}
-
-.picture1 {
-	background: url(http://176.32.230.249/alecrodgers.com/portfolio/images/imacimgcopy.jpg);
-	background-size: cover;
-	height: 150px;
-	width: 150px;
-	border-radius: 50%;
-	float: left;
-	margin-left: 175px;
-	margin-top: 20px;
-}
-
-.picture2 {
-	background: url(http://176.32.230.249/alecrodgers.com/portfolio/images/macbookimgcopy.jpg);
-	background-size: cover;
-	height: 150px;
-	width: 150px;
-	border-radius: 50%;
-	float: right;
-	margin-right: 175px;
-	margin-top: 20px;
 }
 
 section {
