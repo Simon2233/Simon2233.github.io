@@ -1,4 +1,4 @@
-const TypeWriter = function(txtElement, words, wait = 3000) {
+const TypeWriter = function(txtElement, words, wait = 1750) {
 	this.txtElement = txtElement;
 	this.words = words;
 	this.txt = '';
@@ -27,7 +27,7 @@ TypeWriter.prototype.type = function() {
 	this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
 	// Initial Type Speed
-	let typeSpeed = 200;
+	let typeSpeed = 100;
 
 	if(this.isDeleting) {
 		typeSpeed /= 2;
@@ -36,7 +36,7 @@ TypeWriter.prototype.type = function() {
 	// If word is complete
 	if (!this.isDeleting && this.txt === fulltxt) {
 		if (current == this.words.length - 1) {
-			setTimeout(() => loadLanding(), 3000);
+			setTimeout(() => loadLanding(), 2250);
 			return;
 		}
 		// Make pause at end of word
@@ -48,15 +48,15 @@ TypeWriter.prototype.type = function() {
 		// Move to next word
 		this.wordIndex++;
 		// Pause before start typing
-		typeSpeed = 300;
+		typeSpeed = 200;
 	}
 
 	setTimeout(() => this.type(), typeSpeed);
 }
 
 // Init on DOM Load
-// document.addEventListener('DOMContentLoaded', init);
-document.addEventListener('DOMContentLoaded', loadLanding);
+document.addEventListener('DOMContentLoaded', init);
+// document.addEventListener('DOMContentLoaded', loadLanding);
 
 // Init App
 function init() {
