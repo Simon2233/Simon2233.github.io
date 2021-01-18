@@ -55,7 +55,8 @@ TypeWriter.prototype.type = function() {
 }
 
 // Init on DOM Load
-document.addEventListener('DOMContentLoaded', init);
+// document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', loadLanding);
 
 // Init App
 function init() {
@@ -69,4 +70,5 @@ function init() {
 function loadLanding() {
 	document.getElementById("animation").style.display = "none";
 	document.getElementById("content").style.display = "block";
+	document.getElementById("navigation").style.display = "block";
 }

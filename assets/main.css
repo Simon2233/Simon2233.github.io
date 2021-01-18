@@ -1,4 +1,4 @@
-@import @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
 
 * {
 	box-sizing: border-box;
@@ -11,45 +11,55 @@ html {
 }
 
 body {
-	font-family: arial, sans-serif;
+	font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
 	line-height: 1.6;
 	color: #333;
-	font-size: 1.1rem;
+	font-size: 1.1em;
 	height: 100%;
+	background-color: #f6f9fc;
+}
+
+i {
+	cursor: pointer;
+}
+
+i:hover {
+	opacity: 0.7;
 }
 
 a {
 	text-decoration: none;
 	color: #333;
+	line-height: 40px;
+	color: #525f7f;
+	font-weight: 200;
 }
 
 ul {
 	list-style: none;
 }
 
-img {
-	width: 100%;
-}
-
-.bg {
+/*.bg {
 	background-image: url("img/landing.png");
 	height: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-}
+}*/
 
-.container {
-	max-width: 1250px;
-	margin: auto;
-	overflow: hidden;
-	padding: 0 2rem;
+.description {
+	font-weight: 200;
+	font-size: 1em;
+	line-height: 40px;
+	color: #525f7f;
 }
 
 .navbar {
+	display: none;
 	font-size: 1.2rem;
 	padding-top: 0.3rem;
 	padding-bottom: 0.3rem;
+	box-shadow: rgb(225, 225, 225) 0px 2px 4px 0px;
 }
 
 .navbar .container {
@@ -58,6 +68,7 @@ img {
 }
 
 .navbar .nav {
+	margin-right: 15px;
 	justify-self: flex-end;
 	display: flex;
 	align-items: center;
@@ -65,6 +76,11 @@ img {
 }
 
 .navbar .nav a, p.logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	justify-self: flex-start;
+	margin-left: 25px;
 	padding: 0 1rem;
 }
 
@@ -72,11 +88,11 @@ img {
 	opacity: 0.5;
 }
 
-.landing .container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+.name {
+	font-size: 4.5em;
+	font-family: "Monaco";
+	color: #9370DB;
+	margin-bottom: 20px;
 }
 
 /* Input Div Styling */
@@ -96,6 +112,10 @@ img {
     width: 398px;    
 }
 
+#about {
+	margin-top: 150px;
+}
+
 /* Cursor */
 
 .txt-type > .txt {
@@ -112,7 +132,7 @@ img {
 	}
 }
 
-#content {
+#content, #navigation {
 	display: none;
 	animation: fadeIn ease 3s;
 }
@@ -124,4 +144,33 @@ img {
 	100% {
 		opacity: 1;
 	}
+}
+
+
+/* bg eff */
+
+.large-header {
+   position: relative;
+   width: 100%;
+   overflow: hidden;
+   background-size: cover;
+   background-position: center center;
+   z-index: 1;
+}
+
+.main-title {
+   position: absolute;
+   font-weight: 200;
+   margin: 0;
+   padding: 5;
+   top: 30%;
+   left: 35%;
+   -webkit-transform: translate3d(-40%, -30%, 0);
+   transform: translate3d(-40%, -30%, 0);
+}
+
+@media only screen and (max-width: 768px) {
+   .demo .main-title {
+      font-size: 3em;
+   }
 }
