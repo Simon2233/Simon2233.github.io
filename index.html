@@ -14,7 +14,9 @@
 	      <div id="large-header" class="large-header">
 	      	<nav id="navigation" class="navbar">
 				<div class="container">
-					<p class="logo"><i class="fas fa-moon"></i></p>
+					<p class="logo">
+						<i id="theme" class="fas fa-moon" onclick="darkmode()"></i>
+					</p>
 					<ul class="nav">
 						<li><a href="#about">About</a></li>
 						<li><a href="#project">Projects</a></li>
@@ -22,15 +24,14 @@
 					</ul>
 				</div>
 			</nav>
-
 	        <canvas id="demo-canvas"></canvas>
-			<div class="main-title">
-				<div id="animation">
-					<div id="input">
-						<i class="fas fa-search"></i>
-						<span class="txt-type" data-wait="3000" data-words='["Front End Developer", "Designer", "Pro Player for C9", "Simon Fu"]'></span>
-					</div>
+	        <div id="animation">
+				<div id="input">
+					<i class="fas fa-search"></i>
+					<span class="txt-type" data-wait="3000" data-words='["Front End Developer", "Designer", "Pro Player for C9", "Simon Fu"]'></span>
 				</div>
+			</div>
+			<div class="main-title">
 				<div id="content">
 					<section id="about">
 						<div class="name">Simon Fu</div>

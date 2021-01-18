@@ -69,6 +69,18 @@ function init() {
 
 function loadLanding() {
 	document.getElementById("animation").style.display = "none";
+	document.getElementById("demo-canvas").style.display = "block";
 	document.getElementById("content").style.display = "block";
 	document.getElementById("navigation").style.display = "block";
+}
+
+function darkmode() {
+	let icon = document.getElementById("theme")
+	if (icon.classList.contains("fa-moon")) {
+		icon.classList.remove("fa-moon");
+		icon.classList.add("fa-sun");
+	} else {
+		icon.classList.remove("fa-sun");
+		icon.classList.add("fa-moon");
+	}
 }

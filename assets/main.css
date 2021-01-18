@@ -24,7 +24,7 @@ i {
 }
 
 i:hover {
-	opacity: 0.7;
+	opacity: 0.8;
 }
 
 a {
@@ -132,9 +132,17 @@ ul {
 	}
 }
 
-#content, #navigation {
+#content, #navigation, #demo-canvas {
 	display: none;
 	animation: fadeIn ease 3s;
+}
+
+#animation {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
 }
 
 @keyframes fadeIn {
