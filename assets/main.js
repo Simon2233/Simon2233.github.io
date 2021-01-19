@@ -1,4 +1,4 @@
-const TypeWriter = function(txtElement, words, wait = 1750) {
+const TypeWriter = function(txtElement, words, wait = 2000) {
 	this.txtElement = txtElement;
 	this.words = words;
 	this.txt = '';
@@ -27,7 +27,7 @@ TypeWriter.prototype.type = function() {
 	this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
 	// Initial Type Speed
-	let typeSpeed = 100;
+	let typeSpeed = 225;
 
 	if(this.isDeleting) {
 		typeSpeed /= 2;
@@ -36,7 +36,7 @@ TypeWriter.prototype.type = function() {
 	// If word is complete
 	if (!this.isDeleting && this.txt === fulltxt) {
 		if (current == this.words.length - 1) {
-			setTimeout(() => loadLanding(), 2250);
+			setTimeout(() => loadLanding(), 2200);
 			return;
 		}
 		// Make pause at end of word
@@ -48,7 +48,7 @@ TypeWriter.prototype.type = function() {
 		// Move to next word
 		this.wordIndex++;
 		// Pause before start typing
-		typeSpeed = 200;
+		typeSpeed = 400;
 	}
 
 	setTimeout(() => this.type(), typeSpeed);
@@ -72,6 +72,15 @@ function loadLanding() {
 	document.getElementById("demo-canvas").style.display = "block";
 	document.getElementById("content").style.display = "block";
 	document.getElementById("navigation").style.display = "block";
+	document.getElementById("cd-timeline").style.display = "block";
+	document.addEventListener('scroll', function (e) {
+	  var top  = window.pageYOffset + window.innerHeight,
+	      isVisible = top > document.querySelector('.cd-timeline-content').offsetTop;
+	       
+	   if (isVisible) {
+	     document.querySelector('.cd-timeline-content:not(.animate)').classList.add('animate');
+	   }
+	});
 }
 
 function darkmode() {
