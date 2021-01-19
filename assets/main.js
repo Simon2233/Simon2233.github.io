@@ -97,13 +97,17 @@ function isScrolledIntoView(elem) {
     return isVisible;
 }
 
-function darkmode() {
-	let icon = document.getElementById("theme")
-	if (icon.classList.contains("fa-moon")) {
-		icon.classList.remove("fa-moon");
-		icon.classList.add("fa-sun");
+function darkmode(theme) {
+	let isLight = theme.classList.contains('fa-moon');
+	theme.classList.remove('rising');
+	theme.style.display = 'none';
+	if (isLight) {
+		document.querySelector('.fa-sun').style.display = "block";
+		document.querySelector('.fa-sun').classList.add('rising');
+		document.body.classList.add('dark');
 	} else {
-		icon.classList.remove("fa-sun");
-		icon.classList.add("fa-moon");
+		document.querySelector('.fa-moon').style.display = "block";
+		document.querySelector('.fa-moon').classList.add('rising');
+		document.body.classList.remove('dark');
 	}
 }
