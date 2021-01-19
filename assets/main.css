@@ -335,14 +335,32 @@ Timeline CSS
   box-shadow: 0 50px 100px rgba(50,50,93,.05), 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1);
 }
 
-.cd-timeline-content.animate {
-	animation: animation 4s forwards;
+.cd-timeline-block:nth-child(odd) .cd-timeline-content.animate {
+	animation: animateRight 2.5s forwards;
 }
 
-@keyframes animation {
-  100% {
-    opacity: 1;
-  }
+.cd-timeline-block:nth-child(even) .cd-timeline-content.animate {
+	animation: animateLeft 2.5s forwards;
+}
+
+@keyframes animateRight {
+	0% {
+		transform: translateX(-55px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes animateLeft {
+	0% {
+		transform: translateX(55px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 .cd-timeline-content:after {

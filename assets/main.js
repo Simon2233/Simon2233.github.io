@@ -55,8 +55,8 @@ TypeWriter.prototype.type = function() {
 }
 
 // Init on DOM Load
-document.addEventListener('DOMContentLoaded', init);
-// document.addEventListener('DOMContentLoaded', loadLanding);
+// document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', loadLanding);
 
 // Init App
 function init() {
@@ -73,17 +73,28 @@ function loadLanding() {
 	document.getElementById("content").style.display = "block";
 	document.getElementById("navigation").style.display = "block";
 	document.getElementById("cd-timeline").style.display = "block";
-	// Fix accuracy on view coordinate if u feel like it
+
+	// Currently doesn't handle well refreshing while timeline is already in view
 	document.addEventListener('scroll', function (e) {
-		if (document.querySelector('.cd-timeline-content:not(.animate)') != null) {
-			var top  = window.pageYOffset + window.innerHeight,
-			isVisible = top > document.querySelector('.cd-timeline-content:not(.animate)').getBoundingClientRect().top;
-			   
-			if (isVisible) {
-			 document.querySelector('.cd-timeline-content:not(.animate)').classList.add('animate');
+		let hiddenCard = document.querySelector('.cd-timeline-content:not(.animate)');
+		if (hiddenCard != null) {			   
+			if (isScrolledIntoView(hiddenCard)) {
+			 	hiddenCard.classList.add('animate');
 			}
 		}
 	});
+}
+
+function isScrolledIntoView(elem) {
+    var rect = elem.getBoundingClientRect();
+    var elemTop = rect.top;
+    var elemBottom = rect.bottom;
+
+    // Only completely visible elements return true:
+    // var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    // Partially visible elements return true:
+    isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+    return isVisible;
 }
 
 function darkmode() {
