@@ -73,13 +73,16 @@ function loadLanding() {
 	document.getElementById("content").style.display = "block";
 	document.getElementById("navigation").style.display = "block";
 	document.getElementById("cd-timeline").style.display = "block";
+	// Fix accuracy on view coordinate if u feel like it
 	document.addEventListener('scroll', function (e) {
-	  var top  = window.pageYOffset + window.innerHeight,
-	      isVisible = top > document.querySelector('.cd-timeline-content').offsetTop;
-	       
-	   if (isVisible) {
-	     document.querySelector('.cd-timeline-content:not(.animate)').classList.add('animate');
-	   }
+		if (document.querySelector('.cd-timeline-content:not(.animate)') != null) {
+			var top  = window.pageYOffset + window.innerHeight,
+			isVisible = top > document.querySelector('.cd-timeline-content:not(.animate)').getBoundingClientRect().top;
+			   
+			if (isVisible) {
+			 document.querySelector('.cd-timeline-content:not(.animate)').classList.add('animate');
+			}
+		}
 	});
 }
 
