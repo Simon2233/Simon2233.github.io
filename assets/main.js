@@ -55,8 +55,8 @@ TypeWriter.prototype.type = function() {
 }
 
 // Init on DOM Load
-document.addEventListener('DOMContentLoaded', init);
-// document.addEventListener('DOMContentLoaded', loadLanding);
+// document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', loadLanding);
 
 // Init App
 function init() {

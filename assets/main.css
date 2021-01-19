@@ -19,12 +19,40 @@ body {
 	background-color: #f6f9fc;
 }
 
-i {
+i:hover {
 	cursor: pointer;
 }
 
-i:hover {
-	opacity: 0.8;
+.social i {
+	opacity: 0;
+	color: #9370DB;
+	margin-right: 8px;
+}
+
+i.fa-github {
+	animation: slideIn 1.2s forwards;
+	animation-delay: 2s;
+}
+
+i.fa-linkedin {
+	animation: slideIn 1.2s forwards;
+	animation-delay: 2.2s;
+}
+
+i.fa-envelope {
+	animation: slideIn 1.2s forwards;
+	animation-delay: 2.4s;
+}
+
+@keyframes slideIn {
+	0% {
+		opacity: 0;
+		transform: translateX(-25px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 a {
@@ -33,6 +61,7 @@ a {
 	line-height: 40px;
 	color: #525f7f;
 	font-weight: 200;
+	position: relative;
 }
 
 ul {
@@ -52,6 +81,7 @@ ul {
 	font-size: 1em;
 	line-height: 40px;
 	color: #525f7f;
+	margin-bottom: 11px;
 }
 
 .navbar {
@@ -81,18 +111,14 @@ ul {
 	justify-content: center;
 	justify-self: flex-start;
 	margin-left: 25px;
-	padding: 0 1rem;
-}
-
-.navbar .nav a:hover {
-	opacity: 0.5;
+	margin: 0 1rem;
 }
 
 .name {
 	font-size: 4.5em;
 	font-family: "Monaco";
 	color: #9370DB;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 
 /* Input Div Styling */
@@ -182,3 +208,21 @@ ul {
       font-size: 3em;
    }
 }
+
+.nav a:after {    
+	background: none repeat scroll 0 0 transparent;
+	bottom: 0;
+	content: "";
+	display: block;
+	height: 2px;
+	left: 50%;
+	position: absolute;
+	background: #9370DB;
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	width: 0;
+}
+.nav a:hover:after { 
+	width: 100%; 
+	left: 0; 
+}
+
