@@ -1,4 +1,4 @@
-const TypeWriter = function(txtElement, words, wait = 2000) {
+const TypeWriter = function(txtElement, words, wait = 5000) {
 	this.txtElement = txtElement;
 	this.words = words;
 	this.txt = '';
@@ -27,7 +27,7 @@ TypeWriter.prototype.type = function() {
 	this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
 	// Initial Type Speed
-	let typeSpeed = 225;
+	let typeSpeed = 600;
 
 	if(this.isDeleting) {
 		typeSpeed /= 2;
@@ -36,7 +36,6 @@ TypeWriter.prototype.type = function() {
 	// If word is complete
 	if (!this.isDeleting && this.txt === fulltxt) {
 		if (current == this.words.length - 1) {
-			setTimeout(() => loadLanding(), 2200);
 			return;
 		}
 		// Make pause at end of word
@@ -48,14 +47,13 @@ TypeWriter.prototype.type = function() {
 		// Move to next word
 		this.wordIndex++;
 		// Pause before start typing
-		typeSpeed = 400;
+		typeSpeed = 1000;
 	}
 
 	setTimeout(() => this.type(), typeSpeed);
 }
 
 // Init on DOM Load
-// document.addEventListener('DOMContentLoaded', init);
 document.addEventListener('DOMContentLoaded', loadLanding);
 
 // Init App
@@ -68,11 +66,7 @@ function init() {
 }
 
 function loadLanding() {
-	document.getElementById("animation").style.display = "none";
-	document.getElementById("demo-canvas").style.display = "block";
-	document.getElementById("content").style.display = "block";
-	document.getElementById("navigation").style.display = "block";
-	document.getElementById("cd-timeline").style.display = "block";
+	init();
 
 	// Currently doesn't handle well refreshing while timeline is already in view
 	document.addEventListener('scroll', function (e) {
