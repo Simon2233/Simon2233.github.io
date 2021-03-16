@@ -7,6 +7,7 @@
 }
 
 html {
+  scroll-behavior: smooth;
 	height: 100%;
 }
 
@@ -29,6 +30,35 @@ body.dark .cd-timeline-content, body.dark .project-card {
 
 body.dark .cd-timeline-content p, body.dark .project-card p, body.dark .project-card span {
 	color: rgb(255, 255, 255, 0.88);
+}
+
+body.dark .project-card:hover .overlay {
+  background: rgba(255, 255, 255, 0.30);
+}
+
+body.dark .hover-button a, body.dark p.card-title {
+  color: black;
+}
+
+body.dark .hover-button a {
+  border: solid 2px black;
+}
+
+body.dark p.card-title:after {
+  background: black;
+}
+
+body.dark .detail-button {
+  margin-top: 5px;
+  background-color: #272626;
+  font-weight: 500;
+  font-family: "Nunito",sans-serif;
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 15px;
+  color: rgb(255, 255, 255, 0.88);
+  border: 1px solid #B299E5;
+  box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
 }
 
 i:hover {
@@ -628,5 +658,23 @@ p.card-title:after {
   margin-bottom: 10px;
   font-size: .75em;
   color: #525f7f;
+}
+
+.detail-button {
+  margin-top: 5px;
+  background-color: white;
+  font-weight: 500;
+  font-family: "Nunito",sans-serif;
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 15px;
+  color: #6533cb  ;
+  border: none;
+  box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+}
+
+.detail-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
